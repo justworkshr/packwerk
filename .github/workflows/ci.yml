@@ -29,6 +29,7 @@ jobs:
       - name: Run tests
         run: |
           gem install bundler
+          bundle config set frozen 'true'
           bundle install --jobs 4 --retry 3
           bin/rake
   lint:
@@ -42,6 +43,7 @@ jobs:
       - name: Run style checks
         run: |
           gem install bundler
+          bundle config set frozen 'true'
           bundle install --jobs 4 --retry 3
           bin/rubocop
   static-type-checking:
@@ -55,5 +57,6 @@ jobs:
       - name: Run static type checks
         run: |
           gem install bundler
+          bundle config set frozen 'true'
           bundle install --jobs 4 --retry 3
           bin/srb tc
