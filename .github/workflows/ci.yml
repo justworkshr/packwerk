@@ -21,9 +21,9 @@ jobs:
       BUNDLE_GEMFILE: ${{ matrix.gemfile }}
     name: "Tests: Ruby ${{ matrix.ruby }} ${{ matrix.gemfile }}"
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - name: Set up Ruby ${{ matrix.ruby }}
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
       - name: Run tests
@@ -35,11 +35,11 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - name: Set up Ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0.x
+          ruby-version: '3.0'
       - name: Run style checks
         run: |
           gem install bundler
@@ -49,11 +49,11 @@ jobs:
   static-type-checking:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - name: Set up Ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0.x
+          ruby-version: '3.0'
       - name: Run static type checks
         run: |
           gem install bundler
