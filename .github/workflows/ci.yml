@@ -11,11 +11,11 @@ jobs:
           - Gemfile
           - gemfiles/Gemfile-rails-6-0
         ruby:
-          - 2.6
-          - 2.7
-          - 3.0
+          - '2.6'
+          - '2.7'
+          - '3.0'
         exclude:
-          - ruby: 2.6
+          - ruby: '2.6'
             gemfile: Gemfile
     env:
       BUNDLE_GEMFILE: ${{ matrix.gemfile }}
