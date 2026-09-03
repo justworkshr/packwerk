@@ -9,5 +9,5 @@ metadata:
     - ruby
 spec:
   lifecycle: production
-  type: service
-  owner: unknown
+  type: library
+  owner: dev-ex
